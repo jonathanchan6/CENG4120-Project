@@ -51,6 +51,7 @@ class Solution:
 
 
     def readInput(self, path):
+        print("Reading Input...")
         with open(path, "r") as f:
             data = f.read().splitlines()
 
@@ -82,6 +83,7 @@ class Solution:
         self.nTracks = 4 * self.nRows
 
     def getrow(self, result):
+        print("Forming Row...")
         flag = 0
         if self.n8 >= self.n12:
             flag = 8
@@ -155,6 +157,7 @@ class Solution:
         return disp
 
     def legalize(self, result):
+        print("Implementing...")
         for i in range(len(self.vCells)):
             disp = sys.maxsize
             for j in range(len(self.rows)):
@@ -187,6 +190,7 @@ if __name__ == "__main__":
     in_file, out_file = sys.argv[1], sys.argv[2]
     sol = Solution()
     result = sol.result(in_file)
+    print("Finish!")
     with open(out_file, 'w') as f:
         sys.stdout = f
         print(result)
